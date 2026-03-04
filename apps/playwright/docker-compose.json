@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/dynamic-compose.json",
+  "services": [
+    {
+      "name": "playwright",
+      "image": "ghcr.io/browserless/chrome:latest",
+      "isMain": true,
+      "internalPort": 3000,
+      "environment": [
+        {
+          "key": "TOKEN",
+          "value": "${TOKEN}"
+        },
+        {
+          "key": "CONCURRENT",
+          "value": "${CONCURRENT:-5}"
+        },
+        {
+          "key": "TIMEOUT",
+          "value": "${TIMEOUT:-60000}"
+        },
+        {
+          "key": "SCREEN_WIDTH",
+          "value": "1920"
+        },
+        {
+          "key": "SCREEN_HEIGHT",
+          "value": "1080"
+        },
+        {
+          "key": "SCREEN_DEPTH",
+          "value": "16"
+        },
+        {
+          "key": "ENABLE_DEBUGGER",
+          "value": false
+        },
+        {
+          "key": "EXIT_ON_HEALTH_FAILURE",
+          "value": true
+        }
+      ]
+    }
+  ]
+}

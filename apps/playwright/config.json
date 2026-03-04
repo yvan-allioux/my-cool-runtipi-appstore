@@ -1,0 +1,51 @@
+{
+  "name": "Playwright (Browserless)",
+  "id": "playwright",
+  "available": true,
+  "short_desc": "Headless Chrome browser accessible via REST, WebSocket and Playwright API.",
+  "author": "browserless",
+  "port": 20450,
+  "categories": [
+    "utilities"
+  ],
+  "description": "Browserless Chrome is a headless browser-as-a-service. It exposes a REST and WebSocket API compatible with Puppeteer, Playwright and Selenium. Useful for web scraping, screenshot generation, PDF rendering, automated testing, and any headless browser automation task.",
+  "tipi_version": 3,
+  "version": "latest",
+  "source": "https://github.com/browserless/browserless",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1741046400000,
+  "updated_at": 1741046400000,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "type": "password",
+      "label": "API Token",
+      "hint": "Token used to authenticate requests to the browserless API.",
+      "placeholder": "your-secret-token",
+      "env_variable": "TOKEN",
+      "required": true
+    },
+    {
+      "type": "number",
+      "label": "Max concurrent sessions",
+      "hint": "Maximum number of simultaneous browser sessions.",
+      "placeholder": "5",
+      "default": "5",
+      "env_variable": "CONCURRENT",
+      "required": false
+    },
+    {
+      "type": "number",
+      "label": "Session timeout (ms)",
+      "hint": "Timeout for each browser session in milliseconds.",
+      "placeholder": "60000",
+      "default": "60000",
+      "env_variable": "TIMEOUT",
+      "required": false
+    }
+  ]
+}

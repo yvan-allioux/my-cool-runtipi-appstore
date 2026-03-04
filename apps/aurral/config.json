@@ -1,0 +1,51 @@
+{
+  "name": "Aurral",
+  "id": "aurral",
+  "available": true,
+  "short_desc": "Self-hosted music discovery and request management for Lidarr.",
+  "author": "lklynet",
+  "port": 3001,
+  "categories": [
+    "media"
+  ],
+  "description": "Aurral is a self-hosted music discovery and request management app for Lidarr. It offers library-aware recommendations, granular monitoring controls, and optional Weekly Flow playlists powered by Soulseek and Navidrome.",
+  "tipi_version": 3,
+  "version": "1.23.0",
+  "source": "https://github.com/lklynet/aurral",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1741046400000,
+  "updated_at": 1741046400000,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "MusicBrainz contact email",
+      "hint": "Required by MusicBrainz User-Agent policy.",
+      "placeholder": "your@email.com",
+      "env_variable": "MUSICBRAINZ_EMAIL",
+      "required": true
+    },
+    {
+      "type": "text",
+      "label": "PUID",
+      "hint": "User ID to run the container as.",
+      "placeholder": "1000",
+      "default": "1000",
+      "env_variable": "PUID",
+      "required": false
+    },
+    {
+      "type": "text",
+      "label": "PGID",
+      "hint": "Group ID to run the container as.",
+      "placeholder": "1000",
+      "default": "1000",
+      "env_variable": "PGID",
+      "required": false
+    }
+  ]
+}
