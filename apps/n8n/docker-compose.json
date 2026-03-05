@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/dynamic-compose.json",
+  "services": [
+    {
+      "name": "n8n",
+      "image": "n8nio/n8n:2.10.3",
+      "isMain": true,
+      "internalPort": 5678,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/home/node/.n8n"
+        }
+      ],
+      "environment": [
+        {
+          "key": "N8N_PORT",
+          "value": "5678"
+        },
+        {
+          "key": "N8N_PROTOCOL",
+          "value": "http"
+        },
+        {
+          "key": "WEBHOOK_URL",
+          "value": "${N8N_WEBHOOK_URL:-}"
+        },
+        {
+          "key": "GENERIC_TIMEZONE",
+          "value": "${TZ:-Europe/Paris}"
+        }
+      ]
+    }
+  ]
+}

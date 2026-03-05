@@ -1,0 +1,33 @@
+{
+  "name": "n8n-latest",
+  "id": "n8n",
+  "available": true,
+  "short_desc": "Workflow automation tool that connects apps and services together.",
+  "author": "n8n-io",
+  "port": 5678,
+  "categories": [
+    "automation"
+  ],
+  "description": "n8n is a free and source-available workflow automation tool. It allows you to connect anything to everything via its node-based approach, making it highly versatile. You can build complex automations with a visual editor, integrate with hundreds of services, and self-host it for full control over your data and workflows.",
+  "tipi_version": 1,
+  "version": "2.10.3",
+  "source": "https://github.com/n8n-io/n8n",
+  "exposable": true,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1741046400000,
+  "updated_at": 1741046400000,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Webhook URL",
+      "hint": "The public URL of your n8n instance for webhooks (e.g. https://n8n.example.com).",
+      "placeholder": "https://n8n.example.com",
+      "env_variable": "N8N_WEBHOOK_URL",
+      "required": false
+    }
+  ]
+}
