@@ -29,6 +29,10 @@
         {
           "key": "GENERIC_TIMEZONE",
           "value": "${TZ:-Europe/Paris}"
+        },
+        {
+          "key": "N8N_SECURE_COOKIE",
+          "value": "false"
         }
       ]
     }
