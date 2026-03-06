@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/dynamic-compose.json",
+  "services": [
+    {
+      "name": "wireguard-warp-proxy",
+      "image": "linuxserver/wireguard:latest",
+      "isMain": true,
+      "internalPort": 3128,
+      "privileged": true,
+      "capAdd": [
+        "NET_ADMIN"
+      ],
+      "sysctls": {
+        "net.ipv4.conf.all.src_valid_mark": 1
+      },
+      "entrypoint": [
+        "/bin/sh",
+        "-c",
+        "apk add --no-cache tinyproxy bash wireguard-tools && mkdir -p /custom-cont-init.d && cat > /custom-cont-init.d/99-proxy-fix.sh << 'INITSCRIPT'\n#!/bin/bash\necho \"**** [WATCHDOG] Starting watchdog ****\"\n(\n  while ! ip link show peer_cloudflare >/dev/null 2>&1; do sleep 2; done\n  echo \"**** [WATCHDOG] Tunnel detected, applying network fix ****\"\n  GW=$(ip route show 0.0.0.0/0 dev eth0 | cut -d\" \" -f3)\n  ip rule add to $LAN_SUBNET lookup main priority 1 2>/dev/null\n  ip route add $LAN_SUBNET via $GW dev eth0 table main 2>/dev/null\n  iptables -I INPUT -p tcp --dport 3128 -j ACCEPT 2>/dev/null\n  echo \"**** [WATCHDOG] LAN routing fixed ****\"\n) &\ncat <<EOF > /etc/tinyproxy/tinyproxy.conf\nUser root\nPort 3128\nListen 0.0.0.0\nAllow 0.0.0.0/0\nEOF\ntinyproxy\nINITSCRIPT\nchmod +x /custom-cont-init.d/99-proxy-fix.sh && exec /init"
+      ],
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/config",
+          "containerPath": "/config"
+        }
+      ],
+      "environment": [
+        {
+          "key": "PUID",
+          "value": "1000"
+        },
+        {
+          "key": "PGID",
+          "value": "1000"
+        },
+        {
+          "key": "TZ",
+          "value": "${TZ:-Europe/Paris}"
+        },
+        {
+          "key": "LAN_SUBNET",
+          "value": "${LAN_SUBNET:-192.168.1.0/24}"
+        }
+      ]
+    }
+  ]
+}

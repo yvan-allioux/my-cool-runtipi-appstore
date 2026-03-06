@@ -1,0 +1,43 @@
+{
+  "name": "WireGuard WARP Proxy",
+  "id": "wireguard-warp-proxy",
+  "available": true,
+  "short_desc": "Cloudflare WARP VPN tunnel with HTTP proxy (Tinyproxy) for LAN sharing.",
+  "author": "silver",
+  "port": 3128,
+  "categories": [
+    "networking"
+  ],
+  "description": "Runs a Cloudflare WARP client via WireGuard inside a container and exposes an HTTP proxy (Tinyproxy) on port 3128. Other devices on your network can route traffic through the WARP VPN by using this proxy, without installing any VPN software themselves.",
+  "tipi_version": 1,
+  "version": "1.0.0",
+  "source": "https://github.com/silver/WireGuard-Warp-and-Tinyproxy",
+  "exposable": false,
+  "supported_architectures": [
+    "arm64",
+    "amd64"
+  ],
+  "created_at": 1741046400000,
+  "updated_at": 1741046400000,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "LAN Subnet",
+      "hint": "Your local network subnet (e.g. 192.168.1.0/24). Used for routing LAN traffic directly.",
+      "placeholder": "192.168.1.0/24",
+      "default": "192.168.1.0/24",
+      "env_variable": "LAN_SUBNET",
+      "required": true
+    },
+    {
+      "type": "text",
+      "label": "Timezone",
+      "hint": "Timezone for the container (e.g. Europe/Paris).",
+      "placeholder": "Europe/Paris",
+      "default": "Europe/Paris",
+      "env_variable": "TZ",
+      "required": false
+    }
+  ]
+}

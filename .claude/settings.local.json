@@ -3,7 +3,17 @@
     "allow": [
       "WebSearch",
       "WebFetch(domain:hub.docker.com)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:schemas.runtipi.io)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(curl:*)",
+      "Bash(convert:*)",
+      "Bash(file:*)",
+      "Bash(pip install:*)",
+      "Bash(pip3 install:*)",
+      "Bash(ffmpeg:*)"
     ]
   }
 }

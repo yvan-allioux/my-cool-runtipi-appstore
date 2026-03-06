@@ -1,0 +1,36 @@
+{
+  "name": "LanguageTool",
+  "id": "languagetool",
+  "available": true,
+  "short_desc": "Open-source grammar, style, and spell checker supporting 30+ languages",
+  "author": "erikvl87",
+  "port": 8010,
+  "categories": ["utilities"],
+  "description": "LanguageTool is an open-source grammar, style, and spell checker. It supports more than 30 languages and can be used as a self-hosted alternative to Grammarly. It provides an HTTP API that can be used with browser extensions, LibreOffice, and other integrations.",
+  "tipi_version": 2,
+  "version": "6.7",
+  "source": "https://github.com/Erikvl87/docker-languagetool",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1741276800000,
+  "updated_at": 1741276800000,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Java Minimum Heap Size",
+      "hint": "Minimum heap size for the JVM (e.g. 256m, 512m, 1g)",
+      "placeholder": "512m",
+      "env_variable": "JAVA_XMS",
+      "required": false
+    },
+    {
+      "type": "text",
+      "label": "Java Maximum Heap Size",
+      "hint": "Maximum heap size for the JVM (e.g. 512m, 1g, 2g). Increase for better performance.",
+      "placeholder": "1g",
+      "env_variable": "JAVA_XMX",
+      "required": false
+    }
+  ]
+}
