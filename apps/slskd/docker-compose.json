@@ -9,12 +9,17 @@
       "internalPort": 5030,
       "volumes": [
         {
+          "hostPath": "/etc/localtime",
+          "containerPath": "/etc/localtime",
+          "readOnly": true
+        },
+        {
           "hostPath": "${APP_DATA_DIR}/data",
           "containerPath": "/app"
         },
         {
-          "hostPath": "${SLSKD_MUSIC_PATH:-/dev/null}",
-          "containerPath": "/music"
+          "hostPath": "${ROOT_FOLDER_HOST}/media",
+          "containerPath": "/media"
         }
       ],
       "environment": [
@@ -28,7 +33,7 @@
         },
         {
           "key": "SLSKD_SHARED_DIR",
-          "value": "${SLSKD_SHARED_DIR:-/music}"
+          "value": "${SLSKD_SHARED_DIR:-/media}"
         },
         {
           "key": "SLSKD_REMOTE_CONFIGURATION",
@@ -39,12 +44,20 @@
           "value": "5030"
         },
         {
-          "key": "SLSKD_HTTPS_PORT",
-          "value": "5031"
-        },
-        {
           "key": "SLSKD_SLSK_LISTEN_PORT",
           "value": "50300"
+        },
+        {
+          "key": "PUID",
+          "value": "1000"
+        },
+        {
+          "key": "PGID",
+          "value": "1000"
+        },
+        {
+          "key": "TZ",
+          "value": "${TZ}"
         }
       ]
     }

@@ -31,22 +31,6 @@
       "required": true
     },
     {
-      "type": "text",
-      "label": "Shared Directories",
-      "hint": "Semicolon-separated list of directories to share (e.g. /music;/ebooks). Must match volume mounts.",
-      "placeholder": "/music",
-      "env_variable": "SLSKD_SHARED_DIR",
-      "required": false
-    },
-    {
-      "type": "text",
-      "label": "Shared Directories Host Path",
-      "hint": "Path on the host machine to mount as /music inside the container.",
-      "placeholder": "/path/to/your/music",
-      "env_variable": "SLSKD_MUSIC_PATH",
-      "required": false
-    },
-    {
       "type": "boolean",
       "label": "Remote Configuration",
       "hint": "Allow modifying configuration from the web UI. Disable for internet-facing deployments.",
