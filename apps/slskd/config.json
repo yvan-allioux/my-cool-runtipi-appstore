@@ -35,7 +35,7 @@
       "label": "API Key",
       "hint": "API key for external tools like Soularr. Auto-generated if left empty.",
       "env_variable": "SLSKD_API_KEY",
-      "required": true,
+      "required": false,
       "generate": 32
     },
     {
