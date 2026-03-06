@@ -20,6 +20,10 @@
         {
           "hostPath": "${ROOT_FOLDER_HOST}/media",
           "containerPath": "/media"
+        },
+        {
+          "hostPath": "${SLSKD_DOWNLOADS_PATH:-${ROOT_FOLDER_HOST}/media/data/slskd_downloads}",
+          "containerPath": "/app/downloads"
         }
       ],
       "environment": [
