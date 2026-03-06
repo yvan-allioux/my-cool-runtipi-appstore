@@ -56,6 +56,14 @@
           "value": "/media/data/slskd_incomplete"
         },
         {
+          "key": "SLSKD_WEB__AUTHENTICATION__API_KEYS__SOULARR__KEY",
+          "value": "${SLSKD_API_KEY}"
+        },
+        {
+          "key": "SLSKD_WEB__AUTHENTICATION__API_KEYS__SOULARR__ROLE",
+          "value": "administrator"
+        },
+        {
           "key": "PUID",
           "value": "1000"
         },
