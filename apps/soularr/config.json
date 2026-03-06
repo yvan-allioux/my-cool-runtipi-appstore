@@ -7,7 +7,7 @@
   "port": 0,
   "categories": ["media", "automation"],
   "description": "Soularr is a Python script that connects Lidarr with Soulseek (via Slskd) to automatically download music. It reads your wanted albums and artists from Lidarr, searches for them on Soulseek using the Slskd API, downloads matching tracks, and notifies Lidarr to import the completed downloads. It runs as a background service on a configurable interval, with extensive options for search filtering, release matching, and download quality preferences. Requires a running Lidarr and Slskd instance.",
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "latest",
   "source": "https://github.com/mrusse/soularr",
   "exposable": false,

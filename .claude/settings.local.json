@@ -13,7 +13,8 @@
       "Bash(file:*)",
       "Bash(pip install:*)",
       "Bash(pip3 install:*)",
-      "Bash(ffmpeg:*)"
+      "Bash(ffmpeg:*)",
+      "Bash(git status:*)"
     ]
   }
 }
