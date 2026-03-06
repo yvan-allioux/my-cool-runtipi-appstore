@@ -20,10 +20,6 @@
         {
           "hostPath": "${ROOT_FOLDER_HOST}/media",
           "containerPath": "/media"
-        },
-        {
-          "hostPath": "${SLSKD_DOWNLOADS_PATH:-${ROOT_FOLDER_HOST}/media/data/slskd_downloads}",
-          "containerPath": "/app/downloads"
         }
       ],
       "environment": [
@@ -50,6 +46,14 @@
         {
           "key": "SLSKD_SLSK_LISTEN_PORT",
           "value": "50300"
+        },
+        {
+          "key": "SLSKD_DOWNLOADS_DIR",
+          "value": "/media/data/slskd_downloads"
+        },
+        {
+          "key": "SLSKD_INCOMPLETE_DIR",
+          "value": "/media/data/slskd_incomplete"
         },
         {
           "key": "PUID",

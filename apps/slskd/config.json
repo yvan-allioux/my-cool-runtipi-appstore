@@ -31,14 +31,6 @@
       "required": true
     },
     {
-      "type": "text",
-      "label": "Downloads Path (host)",
-      "hint": "Path on the host where slskd downloads will be stored. This should be accessible by Soularr/Lidarr for import.",
-      "placeholder": "/mnt/storage/media/data/slskd_downloads",
-      "env_variable": "SLSKD_DOWNLOADS_PATH",
-      "required": false
-    },
-    {
       "type": "boolean",
       "label": "Remote Configuration",
       "hint": "Allow modifying configuration from the web UI. Disable for internet-facing deployments.",
