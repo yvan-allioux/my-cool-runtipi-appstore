@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/dynamic-compose.json",
+  "services": [
+    {
+      "name": "slskd",
+      "image": "slskd/slskd:latest",
+      "isMain": true,
+      "internalPort": 5030,
+      "volumes": [
+        {
+          "hostPath": "${APP_DATA_DIR}/data",
+          "containerPath": "/app"
+        },
+        {
+          "hostPath": "${SLSKD_MUSIC_PATH:-/dev/null}",
+          "containerPath": "/music"
+        }
+      ],
+      "environment": [
+        {
+          "key": "SLSKD_SLSK_USERNAME",
+          "value": "${SLSKD_SLSK_USERNAME}"
+        },
+        {
+          "key": "SLSKD_SLSK_PASSWORD",
+          "value": "${SLSKD_SLSK_PASSWORD}"
+        },
+        {
+          "key": "SLSKD_SHARED_DIR",
+          "value": "${SLSKD_SHARED_DIR:-/music}"
+        },
+        {
+          "key": "SLSKD_REMOTE_CONFIGURATION",
+          "value": "${SLSKD_REMOTE_CONFIGURATION:-true}"
+        },
+        {
+          "key": "SLSKD_HTTP_PORT",
+          "value": "5030"
+        },
+        {
+          "key": "SLSKD_HTTPS_PORT",
+          "value": "5031"
+        },
+        {
+          "key": "SLSKD_SLSK_LISTEN_PORT",
+          "value": "50300"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "name": "slskd",
+  "id": "slskd",
+  "available": true,
+  "short_desc": "Modern client-server application for the Soulseek file-sharing network.",
+  "author": "slskd",
+  "port": 5030,
+  "categories": ["media"],
+  "description": "slskd is a modern client-server application for the Soulseek file-sharing network. It provides a web-based UI to search, download, and share files on the Soulseek network. Features include configurable shared directories, upload/download slot management, speed limits, user groups, chat rooms, and API key support for integration with tools like Soularr.",
+  "tipi_version": 2,
+  "version": "latest",
+  "source": "https://github.com/slskd/slskd",
+  "exposable": true,
+  "supported_architectures": ["arm64", "amd64"],
+  "created_at": 1741046400000,
+  "updated_at": 1741046400000,
+  "dynamic_config": true,
+  "form_fields": [
+    {
+      "type": "text",
+      "label": "Soulseek Username",
+      "hint": "Your Soulseek network username.",
+      "env_variable": "SLSKD_SLSK_USERNAME",
+      "required": true
+    },
+    {
+      "type": "password",
+      "label": "Soulseek Password",
+      "hint": "Your Soulseek network password.",
+      "env_variable": "SLSKD_SLSK_PASSWORD",
+      "required": true
+    },
+    {
+      "type": "text",
+      "label": "Shared Directories",
+      "hint": "Semicolon-separated list of directories to share (e.g. /music;/ebooks). Must match volume mounts.",
+      "placeholder": "/music",
+      "env_variable": "SLSKD_SHARED_DIR",
+      "required": false
+    },
+    {
+      "type": "text",
+      "label": "Shared Directories Host Path",
+      "hint": "Path on the host machine to mount as /music inside the container.",
+      "placeholder": "/path/to/your/music",
+      "env_variable": "SLSKD_MUSIC_PATH",
+      "required": false
+    },
+    {
+      "type": "boolean",
+      "label": "Remote Configuration",
+      "hint": "Allow modifying configuration from the web UI. Disable for internet-facing deployments.",
+      "default": true,
+      "env_variable": "SLSKD_REMOTE_CONFIGURATION",
+      "required": false
+    }
+  ]
+}
