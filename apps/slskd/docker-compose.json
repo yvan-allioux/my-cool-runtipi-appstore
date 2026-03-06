@@ -33,7 +33,7 @@
         },
         {
           "key": "SLSKD_SHARED_DIR",
-          "value": "${SLSKD_SHARED_DIR:-/media}"
+          "value": "${SLSKD_SHARED_DIR:-/media/data/music}"
         },
         {
           "key": "SLSKD_REMOTE_CONFIGURATION",
