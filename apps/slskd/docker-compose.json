@@ -64,6 +64,10 @@
           "value": "administrator"
         },
         {
+          "key": "SLSKD_UMASK",
+          "value": "0002"
+        },
+        {
           "key": "PUID",
           "value": "1000"
         },
