@@ -32,14 +32,6 @@
       "default": 300,
       "env_variable": "SOULARR_SCRIPT_INTERVAL",
       "required": false
-    },
-    {
-      "type": "text",
-      "label": "Slskd Downloads Path",
-      "hint": "Path to the Slskd downloads directory on the host machine.",
-      "placeholder": "/path/to/slskd/downloads",
-      "env_variable": "SOULARR_SLSKD_DOWNLOADS_PATH",
-      "required": true
     }
   ]
 }

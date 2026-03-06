@@ -27,12 +27,17 @@
       ],
       "volumes": [
         {
-          "hostPath": "${SOULARR_SLSKD_DOWNLOADS_PATH}",
-          "containerPath": "/downloads"
+          "hostPath": "/etc/localtime",
+          "containerPath": "/etc/localtime",
+          "readOnly": true
         },
         {
           "hostPath": "${APP_DATA_DIR}/data",
           "containerPath": "/data"
+        },
+        {
+          "hostPath": "${ROOT_FOLDER_HOST}/media",
+          "containerPath": "/media"
         }
       ]
     }
